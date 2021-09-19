@@ -6,9 +6,12 @@ function App() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const url = 'https://api.nasa.gov/planetary/apod';
+  const API_KEY = '7pcr6jlhvvpU4ZZKaPhBACKfDn1bP9ZXd61Uab1h';
+
   useEffect(() => {
     fetch(
-      "https://api.nasa.gov/planetary/apod?api_key=7pcr6jlhvvpU4ZZKaPhBACKfDn1bP9ZXd61Uab1h"
+      `${url}?api_key=${API_KEY}`
     )
       .then((res) => res.json())
       .then(
