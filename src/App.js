@@ -1,13 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
+require("dotenv").config();
+
+console.log(process.env);
 
 function App() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const url = 'https://api.nasa.gov/planetary/apod';
-  const API_KEY = '7pcr6jlhvvpU4ZZKaPhBACKfDn1bP9ZXd61Uab1h';
+  const API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
   useEffect(() => {
     fetch(
